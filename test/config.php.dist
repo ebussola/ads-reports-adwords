@@ -1,0 +1,13 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: usuario
+ * Date: 31/10/13
+ * Time: 16:25
+ */
+
+return array(
+    'auth_token' => '',
+    'developer_token' => '',
+    'customer_id' => ''
+);

@@ -1,0 +1,46 @@
+{
+    "name": "ebussola/ads-reports-adwords",
+    "description": "Ads Reports for Adwords",
+    "minimum-stability": "stable",
+    "authors": [
+        {
+            "name": "Leonardo Shinagawa",
+            "email": "leonardo@ebussola.com"
+        }
+    ],
+    "require": {
+        "ebussola/ads-reports": "1.0.0",
+        "ebussola/adwords-reports": "1.0.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "3.7.28"
+    },
+    "autoload": {
+        "psr-0": {
+            "ebussola\\ads\\reports\\adwords\\": "src/"
+        }
+    },
+    "repositories" : [
+        {
+            "type": "package",
+            "package": {
+                "name": "google/adwords",
+                "version": "4.6.1",
+                "source": {
+                    "url": "https://code.google.com/p/google-api-adwords-php/",
+                    "type": "git",
+                    "reference": "6e602ed6a048d15779e64384232ac8004898555b"
+                },
+                "autoload": {
+                    "classmap": [
+                        "src/Google/Api/Ads/AdWords/Lib",
+                        "src/Google/Api/Ads/AdWords/Util",
+                        "src/Google/Api/Ads/AdWords/v201309",
+                        "src/Google/Api/Ads/Common/Lib",
+                        "src/Google/Api/Ads/Common/Util"
+                    ]
+                }
+            }
+        }
+    ]
+}
