@@ -9,7 +9,7 @@
         }
     ],
     "require": {
-        "ebussola/ads-reports": "1.0.0",
+        "ebussola/ads-reports": "1.1.0",
         "ebussola/adwords-reports": "1.0.0"
     },
     "require-dev": {

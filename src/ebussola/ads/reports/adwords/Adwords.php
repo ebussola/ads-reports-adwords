@@ -56,6 +56,12 @@ class Adwords {
         return $report_definition;
     }
 
+//    public function makeAdGroupsReport(array $data) {
+//        foreach ($data as $row) {
+//
+//        }
+//    }
+
     /**
      * @param \DateTime $date_start
      * @param \DateTime $date_end
