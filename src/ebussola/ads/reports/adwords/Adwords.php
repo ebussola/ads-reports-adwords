@@ -8,7 +8,6 @@
 
 namespace ebussola\ads\reports\adwords;
 
-use ebussola\ads\reports\adwords\stats\AdGroupStats;
 use ebussola\ads\reports\Reports;
 use ebussola\ads\reports\statsreport\StatsReport;
 use ebussola\adwords\reports\ReportDefinition;
@@ -129,6 +128,15 @@ class Adwords {
     }
 
     /**
+     * @param array $data
+     *
+     * @return StatsReport
+     */
+    public function makeCampaignReport(array $data) {
+        return $this->abstractMakeReport($data, '\ebussola\ads\reports\adwords\stats\CampaignStats');
+    }
+
+    /**
      * @param \DateTime $date_start
      * @param \DateTime $date_end
      * @param string[]  $campaign_ids
@@ -235,6 +243,7 @@ class Adwords {
         $stats_report = new StatsReport();
         foreach ($data as $stats) {
             $stats = new $stats_class($stats);
+            /** @noinspection PhpUndefinedMethodInspection */
             $stats->refreshValues();
 
             $stats_report->addStats($stats);

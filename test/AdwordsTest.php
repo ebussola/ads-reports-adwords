@@ -96,4 +96,21 @@ class AdwordsTest extends PHPUnit_Framework_TestCase {
         }
     }
 
+    /**
+     * @depends testDefinitions
+     */
+    public function testCampaignReports($data) {
+        $campaign_data = $data[0];
+        $campaign_report = $this->adwords->makeCampaignReport($campaign_data);
+        $this->assertInstanceOf('\ebussola\ads\reports\Stats', $campaign_report);
+        $this->assertInstanceOf('\ebussola\ads\reports\StatsReport', $campaign_report);
+
+        /** @var \ebussola\ads\reports\adwords\CampaignStats $stats */
+        foreach ($campaign_report as $stats) {
+            $this->assertInstanceOf('\ebussola\ads\reports\Stats', $stats);
+            $this->assertNotNull($stats->object_id);
+            $this->assertNotNull($stats->name);
+        }
+    }
+
 }

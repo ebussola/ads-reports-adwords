@@ -3,7 +3,7 @@
  * Created by PhpStorm.
  * User: usuario
  * Date: 03/12/13
- * Time: 14:33
+ * Time: 16:22
  */
 
 namespace ebussola\ads\reports\adwords;
@@ -12,17 +12,8 @@ namespace ebussola\ads\reports\adwords;
 use ebussola\ads\reports\Stats;
 
 /**
- * Interface AdStats
+ * Interface CampaignStats
  * @package ebussola\ads\reports\adwords
- *
- * @property string $ad_group_name
- * @property string $campaign_name
- * @property string $campaign_id
- * @property string $headline
- * @property string $destination_url
- * @property string $description1
- * @property string $description2
- * @property string $display_url
  *
  * @property float $average_position
  *
@@ -35,6 +26,6 @@ use ebussola\ads\reports\Stats;
  * @property int $conversions_many_per_click
  * @property int $cost_per_conversion_many_per_click
  */
-interface AdStats extends Stats {
+interface CampaignStats extends Stats {
 
-}
+} 
