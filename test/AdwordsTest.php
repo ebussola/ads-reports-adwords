@@ -60,14 +60,39 @@ class AdwordsTest extends PHPUnit_Framework_TestCase {
     /**
      * @depends testDefinitions
      */
-    public function testReports($data) {
+    public function testAdGroupReports($data) {
         $adgroup_data = $data[4];
         $adgroup_report = $this->adwords->makeAdGroupsReport($adgroup_data);
         $this->assertInstanceOf('\ebussola\ads\reports\Stats', $adgroup_report);
         $this->assertInstanceOf('\ebussola\ads\reports\StatsReport', $adgroup_report);
 
+        /** @var \ebussola\ads\reports\adwords\AdGroupStats $stats */
         foreach ($adgroup_report as $stats) {
             $this->assertInstanceOf('\ebussola\ads\reports\Stats', $stats);
+            $this->assertNotNull($stats->campaign_name);
+            $this->assertNotNull($stats->campaign_id);
+        }
+    }
+
+    /**
+     * @depends testDefinitions
+     */
+    public function testAdReports($data) {
+        $ad_data = $data[5];
+        $ad_report = $this->adwords->makeAdsReport($ad_data);
+        $this->assertInstanceOf('\ebussola\ads\reports\Stats', $ad_report);
+        $this->assertInstanceOf('\ebussola\ads\reports\StatsReport', $ad_report);
+
+        /** @var \ebussola\ads\reports\adwords\AdStats $stats */
+        foreach ($ad_report as $stats) {
+            $this->assertInstanceOf('\ebussola\ads\reports\Stats', $stats);
+            $this->assertNotNull($stats->description1);
+            $this->assertNotNull($stats->description2);
+            $this->assertNotNull($stats->destination_url);
+            $this->assertNotNull($stats->headline);
+            $this->assertNotNull($stats->display_url);
+            $this->assertNotNull($stats->campaign_name);
+            $this->assertNotNull($stats->campaign_id);
         }
     }
 

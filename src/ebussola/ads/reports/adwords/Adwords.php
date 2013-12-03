@@ -64,15 +64,7 @@ class Adwords {
      * @return StatsReport
      */
     public function makeAdGroupsReport(array $data) {
-        $stats_report = new StatsReport();
-        foreach ($data as $stats) {
-            $stats = new AdGroupStats($stats);
-            $stats->refreshValues();
-
-            $stats_report->addStats($stats);
-        }
-
-        return $stats_report;
+        return $this->abstractMakeReport($data, '\ebussola\ads\reports\adwords\stats\AdGroupStats');
     }
 
     /**
@@ -104,6 +96,15 @@ class Adwords {
             ->buildReportDefinition('Ad Report', $predicates, $date_start, $date_end, $report_definition);
 
         return $report_definition;
+    }
+
+    /**
+     * @param array $data
+     *
+     * @return StatsReport
+     */
+    public function makeAdsReport(array $data) {
+        return $this->abstractMakeReport($data, '\ebussola\ads\reports\adwords\stats\AdStats');
     }
 
     /**
@@ -221,6 +222,25 @@ class Adwords {
             ->buildReportDefinition('Sites Report', $predicates, $date_start, $date_end, $report_definition);
 
         return $report_definition;
+    }
+
+    /**
+     * @param array $data
+     * @param       $stats_class
+     * The stats class name
+     *
+     * @return StatsReport
+     */
+    protected function abstractMakeReport(array $data, $stats_class) {
+        $stats_report = new StatsReport();
+        foreach ($data as $stats) {
+            $stats = new $stats_class($stats);
+            $stats->refreshValues();
+
+            $stats_report->addStats($stats);
+        }
+
+        return $stats_report;
     }
 
 }

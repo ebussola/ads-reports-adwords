@@ -20,6 +20,7 @@ class AdGroupsDefinition extends ReportDefinition implements \ebussola\adwords\r
         $this->selector->fields = array(
             'Id',
             'CampaignName',
+            'CampaignId',
             'Name',
             'Impressions',
             'Clicks',

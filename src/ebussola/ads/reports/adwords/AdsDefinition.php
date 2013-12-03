@@ -20,10 +20,12 @@ class AdsDefinition extends ReportDefinition implements \ebussola\adwords\report
         $this->selector = new \Selector();
         $this->selector->fields = array(
             'CampaignName',
+            'CampaignId',
             'AdGroupName',
             'Headline',
             'Description1',
             'Description2',
+            'Url',
             'Impressions',
             'Clicks',
             'Ctr',
