@@ -8,7 +8,9 @@
 
 namespace ebussola\ads\reports\adwords;
 
+use ebussola\ads\reports\adwords\stats\AdGroupStats;
 use ebussola\ads\reports\Reports;
+use ebussola\ads\reports\statsreport\StatsReport;
 use ebussola\adwords\reports\ReportDefinition;
 use ebussola\adwords\reports\Reports as AdwordsReports;
 
@@ -56,11 +58,22 @@ class Adwords {
         return $report_definition;
     }
 
-//    public function makeAdGroupsReport(array $data) {
-//        foreach ($data as $row) {
-//
-//        }
-//    }
+    /**
+     * @param array $data
+     *
+     * @return StatsReport
+     */
+    public function makeAdGroupsReport(array $data) {
+        $stats_report = new StatsReport();
+        foreach ($data as $stats) {
+            $stats = new AdGroupStats($stats);
+            $stats->refreshValues();
+
+            $stats_report->addStats($stats);
+        }
+
+        return $stats_report;
+    }
 
     /**
      * @param \DateTime $date_start

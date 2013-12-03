@@ -9,5 +9,9 @@
 return array(
     'auth_token' => '',
     'developer_token' => '',
-    'customer_id' => ''
+    'customer_id' => '',
+
+    'some_campaigns' => array(),
+    'some_adgroups' => array(),
+    'some_ads' => array()
 );

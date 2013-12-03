@@ -23,11 +23,11 @@ class AdGroupStats extends AbstractStats implements \ebussola\ads\reports\adword
     public function __construct($stats) {
         parent::__construct($stats);
 
-        $this->object_id = &$stats->adGroupID;
-        $this->name = &$stats->adGroup;
+        $this->object_id = & $stats->adGroupID;
+        $this->name = & $stats->adGroup;
 
-        $this->campaign_id = &$stats->campaignID;
-        $this->campaign_name = &$stats->campaign;
+        $this->campaign_id = & $stats->campaignID;
+        $this->campaign_name = & $stats->campaign;
     }
 
 }

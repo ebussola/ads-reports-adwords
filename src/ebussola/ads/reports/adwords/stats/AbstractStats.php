@@ -61,21 +61,21 @@ class AbstractStats extends Stats {
     public function __construct($stats) {
         $this->stats = $stats;
 
-        $this->impressions = &$stats->impressions;
-        $this->clicks = &$stats->clicks;
-        $this->ctr = &$stats->ctr;
-        $this->cpc = &$stats->avgCPC;
-        $this->cost = &$stats->cost;
-        $this->average_position = &$stats->avgPosition;
+        $this->impressions = & $stats->impressions;
+        $this->clicks = & $stats->clicks;
+        $this->ctr = & $stats->ctr;
+        $this->cpc = & $stats->avgCPC;
+        $this->cost = & $stats->cost;
+        $this->average_position = & $stats->avgPosition;
 
-        $this->conversion_rate = &$stats->convRate1PerClick;
-        $this->conversions = &$stats->conv1PerClick;
-        $this->cost_per_conversion = &$stats->costConv1PerClick;
-        $this->view_through_conversion = &$stats->viewThroughConv;
+        $this->conversion_rate = & $stats->convRate1PerClick;
+        $this->conversions = & $stats->conv1PerClick;
+        $this->cost_per_conversion = & $stats->costConv1PerClick;
+        $this->view_through_conversion = & $stats->viewThroughConv;
 
-        $this->conversion_rate_many_per_click = &$stats->convRateManyPerClick;
-        $this->conversions_many_per_click = &$stats->convManyPerClick;
-        $this->cost_per_conversion_many_per_click = &$stats->costConvManyPerClick;
+        $this->conversion_rate_many_per_click = & $stats->convRateManyPerClick;
+        $this->conversions_many_per_click = & $stats->convManyPerClick;
+        $this->cost_per_conversion_many_per_click = & $stats->costConvManyPerClick;
     }
 
 } 

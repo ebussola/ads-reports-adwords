@@ -42,17 +42,33 @@ class AdwordsTest extends PHPUnit_Framework_TestCase {
         $date_end = new DateTime();
 
         $definitions = array();
-        $definitions[] = $this->adwords->makeCampaignDefinition($date_start, $date_end, $config['some_campaigns']);
-        $definitions[] = $this->adwords->makeHourlyCampaignDefinition($date_start, $date_end, $config['some_campaigns']);
-        $definitions[] = $this->adwords->makeDailyCampaignDefinition($date_start, $date_end, $config['some_campaigns']);
-        $definitions[] = $this->adwords->makeMonthlyCampaignDefinition($date_start, $date_end, $config['some_campaigns']);
+        $definitions[0] = $this->adwords->makeCampaignDefinition($date_start, $date_end, $config['some_campaigns']);
+        $definitions[1] = $this->adwords->makeHourlyCampaignDefinition($date_start, $date_end, $config['some_campaigns']);
+        $definitions[2] = $this->adwords->makeDailyCampaignDefinition($date_start, $date_end, $config['some_campaigns']);
+        $definitions[3] = $this->adwords->makeMonthlyCampaignDefinition($date_start, $date_end, $config['some_campaigns']);
 
-        $definitions[] = $this->adwords->makeAdGroupsDefinition($date_start, $date_end, null, $config['some_adgroups']);
-        $definitions[] = $this->adwords->makeAdsDefinition($date_start, $date_end, null, null, $config['some_ads']);
-        $definitions[] = $this->adwords->makeKeywordDefinition($date_start, $date_end, null, $config['some_adgroups']);
-        $definitions[] = $this->adwords->makeSitesDefinition($date_start, $date_end, $config['some_campaigns']);
+        $definitions[4] = $this->adwords->makeAdGroupsDefinition($date_start, $date_end, null, $config['some_adgroups']);
+        $definitions[5] = $this->adwords->makeAdsDefinition($date_start, $date_end, null, null, $config['some_ads']);
+        $definitions[6] = $this->adwords->makeKeywordDefinition($date_start, $date_end, null, $config['some_adgroups']);
+        $definitions[7] = $this->adwords->makeSitesDefinition($date_start, $date_end, $config['some_campaigns']);
 
-        $this->adwords_reports->downloadReports($definitions);
+        $reports = $this->adwords_reports->downloadReports($definitions);
+
+        return $reports;
+    }
+
+    /**
+     * @depends testDefinitions
+     */
+    public function testReports($data) {
+        $adgroup_data = $data[4];
+        $adgroup_report = $this->adwords->makeAdGroupsReport($adgroup_data);
+        $this->assertInstanceOf('\ebussola\ads\reports\Stats', $adgroup_report);
+        $this->assertInstanceOf('\ebussola\ads\reports\StatsReport', $adgroup_report);
+
+        foreach ($adgroup_report as $stats) {
+            $this->assertInstanceOf('\ebussola\ads\reports\Stats', $stats);
+        }
     }
 
 }
