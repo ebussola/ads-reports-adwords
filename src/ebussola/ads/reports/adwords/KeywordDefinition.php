@@ -22,7 +22,9 @@ class KeywordDefinition extends ReportDefinition implements \ebussola\adwords\re
         $this->selector->fields = array(
             'Id',
             'CampaignName',
+            'CampaignId',
             'AdGroupName',
+            'AdGroupId',
             'KeywordText',
             'Impressions',
             'Clicks',

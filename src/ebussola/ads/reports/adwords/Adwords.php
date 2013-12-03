@@ -233,6 +233,15 @@ class Adwords {
     }
 
     /**
+     * @param array $data
+     *
+     * @return StatsReport
+     */
+    public function makeKeywordReport(array $data) {
+        return $this->abstractMakeReport($data, '\ebussola\ads\reports\adwords\stats\KeywordStats');
+    }
+
+    /**
      * @param \DateTime $date_start
      * @param \DateTime $date_end
      * @param string[]  $campaign_ids

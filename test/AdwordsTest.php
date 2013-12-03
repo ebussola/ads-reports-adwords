@@ -171,4 +171,25 @@ class AdwordsTest extends PHPUnit_Framework_TestCase {
         }
     }
 
+    /**
+     * @depends testDefinitions
+     */
+    public function testKeywordReports($data) {
+        $keyword_data = $data[6];
+        $keyword_report = $this->adwords->makeKeywordReport($keyword_data);
+        $this->assertInstanceOf('\ebussola\ads\reports\Stats', $keyword_report);
+        $this->assertInstanceOf('\ebussola\ads\reports\StatsReport', $keyword_report);
+
+        /** @var \ebussola\ads\reports\adwords\KeywordStats $stats */
+        foreach ($keyword_report as $stats) {
+            $this->assertInstanceOf('\ebussola\ads\reports\Stats', $stats);
+            $this->assertNotNull($stats->campaign_id);
+            $this->assertNotNull($stats->campaign_name);
+            $this->assertNotNull($stats->adgroup_id);
+            $this->assertNotNull($stats->adgroup_name);
+            $this->assertNotNull($stats->text);
+            $this->assertNotNull($stats->keyword_match_type);
+        }
+    }
+
 }
