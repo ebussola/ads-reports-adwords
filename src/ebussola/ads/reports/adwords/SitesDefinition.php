@@ -21,8 +21,11 @@ class SitesDefinition extends ReportDefinition implements \ebussola\adwords\repo
         $this->selector = new \Selector();
         $this->selector->fields = array(
             'Id',
+            'DisplayName',
             'CampaignName',
+            'CampaignId',
             'AdGroupName',
+            'AdGroupId',
             'PlacementUrl',
             'Impressions',
             'Clicks',

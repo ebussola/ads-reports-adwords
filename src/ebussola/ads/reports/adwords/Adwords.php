@@ -270,6 +270,15 @@ class Adwords {
 
     /**
      * @param array $data
+     *
+     * @return StatsReport
+     */
+    public function makeSiteReport(array $data) {
+        return $this->abstractMakeReport($data, '\ebussola\ads\reports\adwords\stats\SiteStats');
+    }
+
+    /**
+     * @param array $data
      * @param       $stats_class
      * The stats class name
      *
