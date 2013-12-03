@@ -113,4 +113,62 @@ class AdwordsTest extends PHPUnit_Framework_TestCase {
         }
     }
 
+    /**
+     * @depends testDefinitions
+     */
+    public function testDailyCampaignReports($data) {
+        $campaign_data = $data[2];
+        $campaign_report = $this->adwords->makeDailyCampaignReport($campaign_data);
+        $this->assertInstanceOf('\ebussola\ads\reports\Stats', $campaign_report);
+        $this->assertInstanceOf('\ebussola\ads\reports\StatsReport', $campaign_report);
+
+        /** @var \ebussola\ads\reports\adwords\CampaignStats $stats */
+        foreach ($campaign_report as $stats) {
+            $this->assertInstanceOf('\ebussola\ads\reports\Stats', $stats);
+            $this->assertNotNull($stats->object_id);
+            $this->assertNotNull($stats->name);
+            $this->assertNotNull($stats->time_start);
+            $this->assertNotNull($stats->time_end);
+            $this->assertEquals($stats->time_start, $stats->time_end);
+        }
+    }
+
+    /**
+     * @depends testDefinitions
+     */
+    public function testHourlyCampaignReports($data) {
+        $campaign_data = $data[1];
+        $campaign_report = $this->adwords->makeHourlyCampaignReport($campaign_data);
+        $this->assertInstanceOf('\ebussola\ads\reports\Stats', $campaign_report);
+        $this->assertInstanceOf('\ebussola\ads\reports\StatsReport', $campaign_report);
+
+        /** @var \ebussola\ads\reports\adwords\CampaignStats $stats */
+        foreach ($campaign_report as $stats) {
+            $this->assertInstanceOf('\ebussola\ads\reports\Stats', $stats);
+            $this->assertNotNull($stats->object_id);
+            $this->assertNotNull($stats->name);
+            $this->assertNotNull($stats->time_start);
+            $this->assertNotNull($stats->time_end);
+        }
+    }
+
+    /**
+     * @depends testDefinitions
+     */
+    public function testMonthlyCampaignReports($data) {
+        $campaign_data = $data[3];
+        $campaign_report = $this->adwords->makeMonthlyCampaignReport($campaign_data);
+        $this->assertInstanceOf('\ebussola\ads\reports\Stats', $campaign_report);
+        $this->assertInstanceOf('\ebussola\ads\reports\StatsReport', $campaign_report);
+
+        /** @var \ebussola\ads\reports\adwords\CampaignStats $stats */
+        foreach ($campaign_report as $stats) {
+            $this->assertInstanceOf('\ebussola\ads\reports\Stats', $stats);
+            $this->assertNotNull($stats->object_id);
+            $this->assertNotNull($stats->name);
+            $this->assertNotNull($stats->time_start);
+            $this->assertNotNull($stats->time_end);
+        }
+    }
+
 }

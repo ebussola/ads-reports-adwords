@@ -151,6 +151,15 @@ class Adwords {
     }
 
     /**
+     * @param array $data
+     *
+     * @return StatsReport
+     */
+    public function makeDailyCampaignReport(array $data) {
+        return $this->abstractMakeReport($data, '\ebussola\ads\reports\adwords\stats\DailyCampaignStats');
+    }
+
+    /**
      * @param \DateTime $date_start
      * @param \DateTime $date_end
      * @param string[]  $campaign_ids
@@ -165,6 +174,15 @@ class Adwords {
     }
 
     /**
+     * @param array $data
+     *
+     * @return StatsReport
+     */
+    public function makeMonthlyCampaignReport(array $data) {
+        return $this->abstractMakeReport($data, '\ebussola\ads\reports\adwords\stats\MonthlyCampaignStats');
+    }
+
+    /**
      * @param \DateTime $date_start
      * @param \DateTime $date_end
      * @param string[]  $campaign_ids
@@ -176,6 +194,15 @@ class Adwords {
         $report_definition = new HourlyCampaignDefinition($report_definition);
 
         return $report_definition;
+    }
+
+    /**
+     * @param array $data
+     *
+     * @return StatsReport
+     */
+    public function makeHourlyCampaignReport(array $data) {
+        return $this->abstractMakeReport($data, '\ebussola\ads\reports\adwords\stats\HourlyCampaignStats');
     }
 
     /**
