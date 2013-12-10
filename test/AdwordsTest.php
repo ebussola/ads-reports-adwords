@@ -65,6 +65,7 @@ class AdwordsTest extends PHPUnit_Framework_TestCase {
         $adgroup_report = $this->adwords->makeAdGroupsReport($adgroup_data);
         $this->assertInstanceOf('\ebussola\ads\reports\Stats', $adgroup_report);
         $this->assertInstanceOf('\ebussola\ads\reports\StatsReport', $adgroup_report);
+        $this->assertInstanceOf('\ebussola\ads\reports\adwords\StatsReport', $adgroup_report);
 
         /** @var \ebussola\ads\reports\adwords\AdGroupStats $stats */
         foreach ($adgroup_report as $stats) {
@@ -82,6 +83,7 @@ class AdwordsTest extends PHPUnit_Framework_TestCase {
         $ad_report = $this->adwords->makeAdsReport($ad_data);
         $this->assertInstanceOf('\ebussola\ads\reports\Stats', $ad_report);
         $this->assertInstanceOf('\ebussola\ads\reports\StatsReport', $ad_report);
+        $this->assertInstanceOf('\ebussola\ads\reports\adwords\StatsReport', $ad_report);
 
         /** @var \ebussola\ads\reports\adwords\AdStats $stats */
         foreach ($ad_report as $stats) {
@@ -104,6 +106,7 @@ class AdwordsTest extends PHPUnit_Framework_TestCase {
         $campaign_report = $this->adwords->makeCampaignReport($campaign_data);
         $this->assertInstanceOf('\ebussola\ads\reports\Stats', $campaign_report);
         $this->assertInstanceOf('\ebussola\ads\reports\StatsReport', $campaign_report);
+        $this->assertInstanceOf('\ebussola\ads\reports\adwords\StatsReport', $campaign_report);
 
         /** @var \ebussola\ads\reports\adwords\CampaignStats $stats */
         foreach ($campaign_report as $stats) {
@@ -121,6 +124,7 @@ class AdwordsTest extends PHPUnit_Framework_TestCase {
         $campaign_report = $this->adwords->makeDailyCampaignReport($campaign_data);
         $this->assertInstanceOf('\ebussola\ads\reports\Stats', $campaign_report);
         $this->assertInstanceOf('\ebussola\ads\reports\StatsReport', $campaign_report);
+        $this->assertInstanceOf('\ebussola\ads\reports\adwords\StatsReport', $campaign_report);
 
         /** @var \ebussola\ads\reports\adwords\CampaignStats $stats */
         foreach ($campaign_report as $stats) {
@@ -141,6 +145,7 @@ class AdwordsTest extends PHPUnit_Framework_TestCase {
         $campaign_report = $this->adwords->makeHourlyCampaignReport($campaign_data);
         $this->assertInstanceOf('\ebussola\ads\reports\Stats', $campaign_report);
         $this->assertInstanceOf('\ebussola\ads\reports\StatsReport', $campaign_report);
+        $this->assertInstanceOf('\ebussola\ads\reports\adwords\StatsReport', $campaign_report);
 
         /** @var \ebussola\ads\reports\adwords\CampaignStats $stats */
         foreach ($campaign_report as $stats) {
@@ -160,6 +165,7 @@ class AdwordsTest extends PHPUnit_Framework_TestCase {
         $campaign_report = $this->adwords->makeMonthlyCampaignReport($campaign_data);
         $this->assertInstanceOf('\ebussola\ads\reports\Stats', $campaign_report);
         $this->assertInstanceOf('\ebussola\ads\reports\StatsReport', $campaign_report);
+        $this->assertInstanceOf('\ebussola\ads\reports\adwords\StatsReport', $campaign_report);
 
         /** @var \ebussola\ads\reports\adwords\CampaignStats $stats */
         foreach ($campaign_report as $stats) {
@@ -179,6 +185,7 @@ class AdwordsTest extends PHPUnit_Framework_TestCase {
         $keyword_report = $this->adwords->makeKeywordReport($keyword_data);
         $this->assertInstanceOf('\ebussola\ads\reports\Stats', $keyword_report);
         $this->assertInstanceOf('\ebussola\ads\reports\StatsReport', $keyword_report);
+        $this->assertInstanceOf('\ebussola\ads\reports\adwords\StatsReport', $keyword_report);
 
         /** @var \ebussola\ads\reports\adwords\KeywordStats $stats */
         foreach ($keyword_report as $stats) {
@@ -203,6 +210,7 @@ class AdwordsTest extends PHPUnit_Framework_TestCase {
         $sites_report = $this->adwords->makeSiteReport($sites_data);
         $this->assertInstanceOf('\ebussola\ads\reports\Stats', $sites_report);
         $this->assertInstanceOf('\ebussola\ads\reports\StatsReport', $sites_report);
+        $this->assertInstanceOf('\ebussola\ads\reports\adwords\StatsReport', $sites_report);
 
         /** @var \ebussola\ads\reports\adwords\SiteStats $stats */
         foreach ($sites_report as $stats) {

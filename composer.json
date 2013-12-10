@@ -9,8 +9,8 @@
         }
     ],
     "require": {
-        "ebussola/ads-reports": "1.1.1",
-        "ebussola/adwords-reports": "1.0.0"
+        "ebussola/ads-reports": "1.1.*",
+        "ebussola/adwords-reports": "1.0.*"
     },
     "require-dev": {
         "phpunit/phpunit": "3.7.28"

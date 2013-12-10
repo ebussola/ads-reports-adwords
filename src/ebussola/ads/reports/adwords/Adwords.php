@@ -9,7 +9,6 @@
 namespace ebussola\ads\reports\adwords;
 
 use ebussola\ads\reports\Reports;
-use ebussola\ads\reports\statsreport\StatsReport;
 use ebussola\adwords\reports\ReportDefinition;
 use ebussola\adwords\reports\Reports as AdwordsReports;
 
@@ -285,7 +284,8 @@ class Adwords {
      * @return StatsReport
      */
     protected function abstractMakeReport(array $data, $stats_class) {
-        $stats_report = new StatsReport();
+        $stats_report = new \ebussola\ads\reports\statsreport\StatsReport();
+        $stats_report = new \ebussola\ads\reports\adwords\statsreport\StatsReport($stats_report);
         foreach ($data as $stats) {
             $stats = new $stats_class($stats);
             /** @noinspection PhpUndefinedMethodInspection */
