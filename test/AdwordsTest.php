@@ -129,8 +129,8 @@ class AdwordsTest extends PHPUnit_Framework_TestCase {
         /** @var \ebussola\ads\reports\adwords\CampaignStats $stats */
         foreach ($campaign_report as $stats) {
             $this->assertInstanceOf('\ebussola\ads\reports\Stats', $stats);
-            $this->assertNotNull($stats->object_id);
-            $this->assertNotNull($stats->name);
+            $this->assertNull($stats->object_id);
+            $this->assertNull($stats->name);
             $this->assertNotNull($stats->time_start);
             $this->assertNotNull($stats->time_end);
             $this->assertEquals($stats->time_start, $stats->time_end);
@@ -150,8 +150,8 @@ class AdwordsTest extends PHPUnit_Framework_TestCase {
         /** @var \ebussola\ads\reports\adwords\CampaignStats $stats */
         foreach ($campaign_report as $stats) {
             $this->assertInstanceOf('\ebussola\ads\reports\Stats', $stats);
-            $this->assertNotNull($stats->object_id);
-            $this->assertNotNull($stats->name);
+            $this->assertNull($stats->object_id);
+            $this->assertNull($stats->name);
             $this->assertNotNull($stats->time_start);
             $this->assertNotNull($stats->time_end);
         }
@@ -170,8 +170,8 @@ class AdwordsTest extends PHPUnit_Framework_TestCase {
         /** @var \ebussola\ads\reports\adwords\CampaignStats $stats */
         foreach ($campaign_report as $stats) {
             $this->assertInstanceOf('\ebussola\ads\reports\Stats', $stats);
-            $this->assertNotNull($stats->object_id);
-            $this->assertNotNull($stats->name);
+            $this->assertNull($stats->object_id);
+            $this->assertNull($stats->name);
             $this->assertNotNull($stats->time_start);
             $this->assertNotNull($stats->time_end);
         }
