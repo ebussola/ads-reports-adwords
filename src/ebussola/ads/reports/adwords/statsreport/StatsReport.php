@@ -174,4 +174,11 @@ class StatsReport implements \ebussola\ads\reports\adwords\StatsReport {
         $this->stats_report->rewind();
     }
 
+    /**
+     * @return void
+     */
+    public function purgeStats() {
+        $this->stats_report->purgeStats();
+    }
+
 }

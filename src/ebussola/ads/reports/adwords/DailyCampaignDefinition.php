@@ -24,11 +24,6 @@ class DailyCampaignDefinition implements ReportDefinition {
         $this->selector->fields = array_merge($this->selector->fields, array(
             'Date'
         ));
-
-        $del_key = array_search('Id', $this->selector->fields);
-        unset($this->selector->fields[$del_key]);
-        $del_key = array_search('CampaignName', $this->selector->fields);
-        unset($this->selector->fields[$del_key]);
     }
 
     /**

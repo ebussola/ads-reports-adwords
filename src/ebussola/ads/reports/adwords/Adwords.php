@@ -155,7 +155,10 @@ class Adwords {
      * @return StatsReport
      */
     public function makeDailyCampaignReport(array $data) {
-        return $this->abstractMakeReport($data, '\ebussola\ads\reports\adwords\stats\DailyCampaignStats');
+        $stats_report = $this->abstractMakeReport($data, '\ebussola\ads\reports\adwords\stats\DailyCampaignStats');
+        $this->reports->groupBy('date', $stats_report);
+
+        return $stats_report;
     }
 
     /**
@@ -178,7 +181,10 @@ class Adwords {
      * @return StatsReport
      */
     public function makeMonthlyCampaignReport(array $data) {
-        return $this->abstractMakeReport($data, '\ebussola\ads\reports\adwords\stats\MonthlyCampaignStats');
+        $stats_report = $this->abstractMakeReport($data, '\ebussola\ads\reports\adwords\stats\MonthlyCampaignStats');
+        $this->reports->groupBy('month', $stats_report);
+
+        return $stats_report;
     }
 
     /**
@@ -201,7 +207,10 @@ class Adwords {
      * @return StatsReport
      */
     public function makeHourlyCampaignReport(array $data) {
-        return $this->abstractMakeReport($data, '\ebussola\ads\reports\adwords\stats\HourlyCampaignStats');
+        $stats_report = $this->abstractMakeReport($data, '\ebussola\ads\reports\adwords\stats\HourlyCampaignStats');
+        $this->reports->groupBy('hour', $stats_report);
+
+        return $stats_report;
     }
 
     /**

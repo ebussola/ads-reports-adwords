@@ -126,11 +126,11 @@ class AdwordsTest extends PHPUnit_Framework_TestCase {
         $this->assertInstanceOf('\ebussola\ads\reports\StatsReport', $campaign_report);
         $this->assertInstanceOf('\ebussola\ads\reports\adwords\StatsReport', $campaign_report);
 
+        $this->assertCount(6, $campaign_report->stats);
+
         /** @var \ebussola\ads\reports\adwords\CampaignStats $stats */
         foreach ($campaign_report as $stats) {
             $this->assertInstanceOf('\ebussola\ads\reports\Stats', $stats);
-            $this->assertNull($stats->object_id);
-            $this->assertNull($stats->name);
             $this->assertNotNull($stats->time_start);
             $this->assertNotNull($stats->time_end);
             $this->assertEquals($stats->time_start, $stats->time_end);
@@ -147,11 +147,11 @@ class AdwordsTest extends PHPUnit_Framework_TestCase {
         $this->assertInstanceOf('\ebussola\ads\reports\StatsReport', $campaign_report);
         $this->assertInstanceOf('\ebussola\ads\reports\adwords\StatsReport', $campaign_report);
 
+        $this->assertCount(24, $campaign_report->stats);
+
         /** @var \ebussola\ads\reports\adwords\CampaignStats $stats */
         foreach ($campaign_report as $stats) {
             $this->assertInstanceOf('\ebussola\ads\reports\Stats', $stats);
-            $this->assertNull($stats->object_id);
-            $this->assertNull($stats->name);
             $this->assertNotNull($stats->time_start);
             $this->assertNotNull($stats->time_end);
         }
@@ -167,11 +167,11 @@ class AdwordsTest extends PHPUnit_Framework_TestCase {
         $this->assertInstanceOf('\ebussola\ads\reports\StatsReport', $campaign_report);
         $this->assertInstanceOf('\ebussola\ads\reports\adwords\StatsReport', $campaign_report);
 
+        $this->assertCount(1, $campaign_report->stats);
+
         /** @var \ebussola\ads\reports\adwords\CampaignStats $stats */
         foreach ($campaign_report as $stats) {
             $this->assertInstanceOf('\ebussola\ads\reports\Stats', $stats);
-            $this->assertNull($stats->object_id);
-            $this->assertNull($stats->name);
             $this->assertNotNull($stats->time_start);
             $this->assertNotNull($stats->time_end);
         }

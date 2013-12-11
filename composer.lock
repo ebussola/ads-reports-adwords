@@ -3,20 +3,20 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "3e995d599f0563596d0015f5ba00d6a5",
+    "hash": "cd4b1b2145c3298e7b2120c5c97812cd",
     "packages": [
         {
             "name": "ebussola/ads-reports",
-            "version": "1.1.2",
+            "version": "1.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ebussola/ads-reports.git",
-                "reference": "1ca7b88e543732fdb74185a08f6f5cee0fbb5235"
+                "reference": "9ccfadd4ce79f383a8591f3961ae534329ad716a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ebussola/ads-reports/zipball/1ca7b88e543732fdb74185a08f6f5cee0fbb5235",
-                "reference": "1ca7b88e543732fdb74185a08f6f5cee0fbb5235",
+                "url": "https://api.github.com/repos/ebussola/ads-reports/zipball/9ccfadd4ce79f383a8591f3961ae534329ad716a",
+                "reference": "9ccfadd4ce79f383a8591f3961ae534329ad716a",
                 "shasum": ""
             },
             "require-dev": {
@@ -36,7 +36,7 @@
                 }
             ],
             "description": "Core classes to Ads Reports",
-            "time": "2013-12-10 20:20:09"
+            "time": "2013-12-11 18:00:48"
         },
         {
             "name": "ebussola/adwords-reports",
