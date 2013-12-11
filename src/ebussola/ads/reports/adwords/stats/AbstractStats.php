@@ -9,6 +9,7 @@
 namespace ebussola\ads\reports\adwords\stats;
 
 
+use ebussola\ads\reports\adwords\MathHelper;
 use ebussola\ads\reports\stats\Stats;
 
 class AbstractStats extends Stats {
@@ -78,4 +79,24 @@ class AbstractStats extends Stats {
         $this->cost_per_conversion_many_per_click = & $stats->costConvManyPerClick;
     }
 
-} 
+    /**
+     * @param \ebussola\ads\reports\Stats | AbstractStats $stats
+     */
+    public function merge(\ebussola\ads\reports\Stats $stats) {
+        $this->conversions += $stats->conversions;
+        $this->view_through_conversion += $stats->view_through_conversion;
+        $this->conversions_many_per_click += $stats->conversions_many_per_click;
+
+        parent::merge($stats);
+    }
+
+    public function refreshValues() {
+        $this->conversion_rate = MathHelper::calcConvRate($this->conversions, $this->clicks);
+        $this->cost_per_conversion = MathHelper::calcCostConv($this->cost, $this->conversions);
+        $this->conversion_rate_many_per_click = MathHelper::calcConvRate($this->conversions_many_per_click, $this->clicks);
+        $this->cost_per_conversion_many_per_click = MathHelper::calcCostConv($this->cost, $this->conversions_many_per_click);
+
+        parent::refreshValues();
+    }
+
+}

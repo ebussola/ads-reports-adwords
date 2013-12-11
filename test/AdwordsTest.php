@@ -119,6 +119,32 @@ class AdwordsTest extends PHPUnit_Framework_TestCase {
     /**
      * @depends testDefinitions
      */
+    public function testCampaignReportsWithConversions($data) {
+        $campaign_data = $data[0];
+        $campaign_report = $this->adwords->makeCampaignReport($campaign_data);
+
+        /** @var \ebussola\ads\reports\adwords\CampaignStats $stats */
+        foreach ($campaign_report as $stats) {
+            $stats->conversions = 5;
+            $stats->conversions_many_per_click = 5;
+            $stats->view_through_conversion = 5;
+        }
+
+        foreach ($campaign_report as $stats) {
+            $stats->merge($stats);
+        }
+
+        foreach ($campaign_report as $stats) {
+            $this->assertEquals(10, $stats->conversions);
+            $this->assertEquals(10, $stats->conversions_many_per_click);
+            $this->assertEquals(10, $stats->view_through_conversion);
+        }
+
+    }
+
+    /**
+     * @depends testDefinitions
+     */
     public function testDailyCampaignReports($data) {
         $campaign_data = $data[2];
         $campaign_report = $this->adwords->makeDailyCampaignReport($campaign_data);

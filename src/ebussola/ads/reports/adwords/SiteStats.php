@@ -25,7 +25,7 @@ use ebussola\ads\reports\Stats;
  * @property float $conversion_rate
  * @property int $conversions
  * @property int $cost_per_conversion
- * @property int $view_through_conversions
+ * @property int $view_through_conversion
  *
  * @property float $conversion_rate_many_per_click
  * @property int $conversions_many_per_click
