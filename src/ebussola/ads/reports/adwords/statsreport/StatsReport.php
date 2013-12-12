@@ -10,6 +10,7 @@ namespace ebussola\ads\reports\adwords\statsreport;
 
 
 use ebussola\ads\reports\adwords\MathHelper;
+use ebussola\ads\reports\adwords\stats\AbstractStats;
 use ebussola\ads\reports\Stats;
 
 class StatsReport implements \ebussola\ads\reports\adwords\StatsReport {
@@ -19,6 +20,7 @@ class StatsReport implements \ebussola\ads\reports\adwords\StatsReport {
      */
     private $stats_report;
 
+    public $average_position;
     public $conversion_rate;
     public $conversions;
     public $cost_per_conversion;
@@ -54,6 +56,7 @@ class StatsReport implements \ebussola\ads\reports\adwords\StatsReport {
 
         $this->stats_report->refreshValues();
 
+        $this->average_position = $this->getAveragePositionSum() / count($this->stats);
         $this->conversion_rate = MathHelper::calcConvRate($this->conversions, $this->clicks);
         $this->conversion_rate_many_per_click = MathHelper::calcConvRate($this->conversions_many_per_click, $this->clicks);
     }
@@ -179,6 +182,16 @@ class StatsReport implements \ebussola\ads\reports\adwords\StatsReport {
      */
     public function purgeStats() {
         $this->stats_report->purgeStats();
+    }
+
+    private function getAveragePositionSum() {
+        $result = 0;
+        /** @var AbstractStats $stats */
+        foreach ($this->stats as $stats) {
+            $result += $stats->average_position;
+        }
+
+        return $result;
     }
 
 }

@@ -98,5 +98,20 @@ class StatsReportTest extends PHPUnit_Framework_TestCase {
         $this->assertTrue($stats_report->hasConversions());
     }
 
+    public function testAveragePosition() {
+        $stats_report = new \ebussola\ads\reports\statsreport\StatsReport();
+        for ($i=0 ; $i<=100 ; $i++) {
+            $stats = new \stdClass();
+            $stats->avgPosition = rand(3, 5);
+
+            $stats = new \ebussola\ads\reports\adwords\stats\AbstractStats($stats);
+            $stats_report->addStats($stats);
+        }
+
+        $stats_report = new \ebussola\ads\reports\adwords\statsreport\StatsReport($stats_report);
+        $stats_report->refreshValues();
+        $this->assertLessThanOrEqual(5, $stats_report->average_position);
+        $this->assertGreaterThanOrEqual(3, $stats_report->average_position);
+    }
+
 }
- 

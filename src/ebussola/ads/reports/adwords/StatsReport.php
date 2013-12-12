@@ -12,6 +12,8 @@ namespace ebussola\ads\reports\adwords;
  * Interface StatsReport
  * @package ebussola\ads\reports\adwords
  *
+ * @property float $average_position
+ *
  * @property float $conversion_rate
  * @property int $conversions
  * @property int $cost_per_conversion
