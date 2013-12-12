@@ -114,4 +114,31 @@ class StatsReportTest extends PHPUnit_Framework_TestCase {
         $this->assertGreaterThanOrEqual(3, $stats_report->average_position);
     }
 
+    public function testPurgeStats() {
+        $stats_report = StatsGen::genStatsReport();
+        $stats_report->purgeStats();
+
+        $this->assertNull($stats_report->conversions);
+        $this->assertNull($stats_report->conversion_rate);
+        $this->assertNull($stats_report->cost_per_conversion);
+        $this->assertNull($stats_report->conversions_many_per_click);
+        $this->assertNull($stats_report->conversion_rate_many_per_click);
+        $this->assertNull($stats_report->cost_per_conversion_many_per_click);
+        $this->assertNull($stats_report->view_through_conversion);
+    }
+
+    public function testRefreshValues() {
+        $stats_report = StatsGen::genStatsReport();
+        $stats_report2 = clone $stats_report;
+
+        $stats_report->refreshValues();
+        $this->assertEquals($stats_report->conversions, $stats_report2->conversions);
+        $this->assertEquals($stats_report->conversion_rate, $stats_report2->conversion_rate);
+        $this->assertEquals($stats_report->cost_per_conversion, $stats_report2->cost_per_conversion);
+        $this->assertEquals($stats_report->conversions_many_per_click, $stats_report2->conversions_many_per_click);
+        $this->assertEquals($stats_report->conversion_rate_many_per_click, $stats_report2->conversion_rate_many_per_click);
+        $this->assertEquals($stats_report->cost_per_conversion_many_per_click, $stats_report2->cost_per_conversion_many_per_click);
+        $this->assertEquals($stats_report->view_through_conversion, $stats_report2->view_through_conversion);
+    }
+
 }

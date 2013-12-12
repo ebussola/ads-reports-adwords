@@ -7,16 +7,16 @@
     "packages": [
         {
             "name": "ebussola/ads-reports",
-            "version": "1.2.1",
+            "version": "1.2.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ebussola/ads-reports.git",
-                "reference": "9ccfadd4ce79f383a8591f3961ae534329ad716a"
+                "reference": "d8f7debf0adf59225ab70c53a9854db651f54d26"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ebussola/ads-reports/zipball/9ccfadd4ce79f383a8591f3961ae534329ad716a",
-                "reference": "9ccfadd4ce79f383a8591f3961ae534329ad716a",
+                "url": "https://api.github.com/repos/ebussola/ads-reports/zipball/d8f7debf0adf59225ab70c53a9854db651f54d26",
+                "reference": "d8f7debf0adf59225ab70c53a9854db651f54d26",
                 "shasum": ""
             },
             "require-dev": {
@@ -36,7 +36,7 @@
                 }
             ],
             "description": "Core classes to Ads Reports",
-            "time": "2013-12-11 18:00:48"
+            "time": "2013-12-12 18:43:45"
         },
         {
             "name": "ebussola/adwords-reports",

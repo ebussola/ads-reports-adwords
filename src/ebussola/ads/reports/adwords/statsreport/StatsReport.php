@@ -48,7 +48,7 @@ class StatsReport implements \ebussola\ads\reports\adwords\StatsReport {
      */
     public function refreshValues() {
         $statses = $this->stats;
-        $this->stats = array();
+        $this->purgeStats();
 
         foreach ($statses as $stats) {
             $this->addStats($stats);
@@ -80,9 +80,9 @@ class StatsReport implements \ebussola\ads\reports\adwords\StatsReport {
         if ($stats->cost_per_conversion != null) {
             $this->cost_per_conversion = $this->cost_per_conversion + $stats->cost_per_conversion;
         }
-        if ($stats->conversion_rate != null) {
-            $this->conversion_rate = $this->conversion_rate + $stats->conversion_rate;
-        }
+//        if ($stats->conversion_rate != null) {
+//            $this->conversion_rate = $this->conversion_rate + $stats->conversion_rate;
+//        }
 
         if ($stats->conversions_many_per_click != null) {
             $this->conversions_many_per_click = $this->conversions_many_per_click + $stats->conversions_many_per_click;
@@ -90,9 +90,9 @@ class StatsReport implements \ebussola\ads\reports\adwords\StatsReport {
         if ($stats->conversion_rate_many_per_click != null) {
             $this->conversion_rate_many_per_click = $this->conversion_rate_many_per_click + $stats->conversion_rate_many_per_click;
         }
-        if ($stats->cost_per_conversion_many_per_click != null) {
-            $this->cost_per_conversion_many_per_click = $this->cost_per_conversion_many_per_click + $stats->cost_per_conversion_many_per_click;
-        }
+//        if ($stats->cost_per_conversion_many_per_click != null) {
+//            $this->cost_per_conversion_many_per_click = $this->cost_per_conversion_many_per_click + $stats->cost_per_conversion_many_per_click;
+//        }
 
         $this->view_through_conversion = $this->view_through_conversion + $stats->view_through_conversion;
     }
@@ -182,6 +182,15 @@ class StatsReport implements \ebussola\ads\reports\adwords\StatsReport {
      */
     public function purgeStats() {
         $this->stats_report->purgeStats();
+
+        $this->average_position = null;
+        $this->conversion_rate = null;
+        $this->conversions = null;
+        $this->cost_per_conversion = null;
+        $this->view_through_conversion = null;
+        $this->conversion_rate_many_per_click = null;
+        $this->conversions_many_per_click = null;
+        $this->cost_per_conversion_many_per_click = null;
     }
 
     private function getAveragePositionSum() {
