@@ -132,6 +132,21 @@ class StatsReportTest extends PHPUnit_Framework_TestCase {
         $stats_report2 = clone $stats_report;
 
         $stats_report->refreshValues();
+        $this->assertNotNull($stats_report->conversions);
+        $this->assertNotNull($stats_report->conversion_rate);
+        $this->assertNotNull($stats_report->cost_per_conversion);
+        $this->assertNotNull($stats_report->conversions_many_per_click);
+        $this->assertNotNull($stats_report->conversion_rate_many_per_click);
+        $this->assertNotNull($stats_report->cost_per_conversion_many_per_click);
+        $this->assertNotNull($stats_report->view_through_conversion);
+        $this->assertNotNull($stats_report2->conversions);
+        $this->assertNotNull($stats_report2->conversion_rate);
+        $this->assertNotNull($stats_report2->cost_per_conversion);
+        $this->assertNotNull($stats_report2->conversions_many_per_click);
+        $this->assertNotNull($stats_report2->conversion_rate_many_per_click);
+        $this->assertNotNull($stats_report2->cost_per_conversion_many_per_click);
+        $this->assertNotNull($stats_report2->view_through_conversion);
+
         $this->assertEquals($stats_report->conversions, $stats_report2->conversions);
         $this->assertEquals($stats_report->conversion_rate, $stats_report2->conversion_rate);
         $this->assertEquals($stats_report->cost_per_conversion, $stats_report2->cost_per_conversion);

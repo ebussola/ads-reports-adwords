@@ -59,6 +59,8 @@ class StatsReport implements \ebussola\ads\reports\adwords\StatsReport {
         $this->average_position = $this->getAveragePositionSum() / count($this->stats);
         $this->conversion_rate = MathHelper::calcConvRate($this->conversions, $this->clicks);
         $this->conversion_rate_many_per_click = MathHelper::calcConvRate($this->conversions_many_per_click, $this->clicks);
+        $this->cost_per_conversion = MathHelper::calcCostConv($this->cost, $this->conversions);
+        $this->cost_per_conversion_many_per_click = MathHelper::calcCostConv($this->cost, $this->conversions_many_per_click);
     }
 
     /**
@@ -77,22 +79,10 @@ class StatsReport implements \ebussola\ads\reports\adwords\StatsReport {
         if ($stats->conversions != null) {
             $this->conversions = $this->conversions + $stats->conversions;
         }
-        if ($stats->cost_per_conversion != null) {
-            $this->cost_per_conversion = $this->cost_per_conversion + $stats->cost_per_conversion;
-        }
-//        if ($stats->conversion_rate != null) {
-//            $this->conversion_rate = $this->conversion_rate + $stats->conversion_rate;
-//        }
 
         if ($stats->conversions_many_per_click != null) {
             $this->conversions_many_per_click = $this->conversions_many_per_click + $stats->conversions_many_per_click;
         }
-        if ($stats->conversion_rate_many_per_click != null) {
-            $this->conversion_rate_many_per_click = $this->conversion_rate_many_per_click + $stats->conversion_rate_many_per_click;
-        }
-//        if ($stats->cost_per_conversion_many_per_click != null) {
-//            $this->cost_per_conversion_many_per_click = $this->cost_per_conversion_many_per_click + $stats->cost_per_conversion_many_per_click;
-//        }
 
         $this->view_through_conversion = $this->view_through_conversion + $stats->view_through_conversion;
     }
