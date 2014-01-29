@@ -42,6 +42,28 @@ class SitesDefinition extends ReportDefinition implements \ebussola\adwords\repo
             'ConversionsManyPerClick',
             'CostPerConversionManyPerClick'
         );
+
+        $this->field_types = array(
+            'criterionID' => 'string',
+            'criteriaDisplayName' => 'string',
+            'campaign' => 'string',
+            'campaignID' => 'string',
+            'adGroup' => 'string',
+            'adGroupID' => 'string',
+            'placement' => 'string',
+            'impressions' => 'int',
+            'clicks' => 'int',
+            'ctr' => 'float',
+            'avgCPC' => 'float',
+            'cost' => 'float',
+            'convRate1PerClick' => 'float',
+            'conv1PerClick' => 'int',
+            'costConv1PerClick' => 'float',
+            'viewThroughConv' => 'int',
+            'convRateManyPerClick' => 'float',
+            'convManyPerClick' => 'int',
+            'costConvManyPerClick' => 'float'
+        );
     }
 
 } 

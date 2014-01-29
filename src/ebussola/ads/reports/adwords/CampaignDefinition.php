@@ -38,6 +38,24 @@ class CampaignDefinition extends ReportDefinition implements \ebussola\adwords\r
             'ConversionsManyPerClick',
             'CostPerConversionManyPerClick'
         );
+
+        $this->field_types = array(
+            'campaignID' => 'string',
+            'campaign' => 'string',
+            'impressions' => 'int',
+            'clicks' => 'int',
+            'ctr' => 'float',
+            'avgCPC' => 'float',
+            'cost' => 'float',
+            'avgPosition' => 'float',
+            'convRate1PerClick' => 'float',
+            'conv1PerClick' => 'int',
+            'costConv1PerClick' => 'float',
+            'viewThroughConv' => 'int',
+            'convRateManyPerClick' => 'float',
+            'convManyPerClick' => 'int',
+            'costConvManyPerClick' => 'float'
+        );
     }
 
 } 

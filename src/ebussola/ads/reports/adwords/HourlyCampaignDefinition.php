@@ -22,6 +22,10 @@ class HourlyCampaignDefinition implements \ebussola\adwords\reports\ReportDefini
         $this->selector->fields = array_merge($this->selector->fields, array(
             'HourOfDay'
         ));
+
+        $this->field_types = array_merge($this->field_types, array(
+            'hourOfDay' => 'int'
+        ));
     }
 
     /**

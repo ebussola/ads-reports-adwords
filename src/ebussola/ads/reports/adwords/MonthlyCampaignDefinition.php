@@ -24,6 +24,10 @@ class MonthlyCampaignDefinition implements ReportDefinition {
         $this->selector->fields = array_merge($this->selector->fields, array(
             'Month'
         ));
+
+        $this->field_types = array_merge($this->field_types, array(
+            'month' => 'string'
+        ));
     }
 
     /**

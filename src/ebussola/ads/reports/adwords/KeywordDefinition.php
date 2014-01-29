@@ -43,6 +43,29 @@ class KeywordDefinition extends ReportDefinition implements \ebussola\adwords\re
             'ConversionsManyPerClick',
             'CostPerConversionManyPerClick'
         );
+
+        $this->field_types = array(
+            'keywordID' => 'string',
+            'campaign' => 'string',
+            'campaignID' => 'string',
+            'adGroup' => 'string',
+            'adGroupID' => 'string',
+            'keyword' => 'string',
+            'impressions' => 'int',
+            'clicks' => 'int',
+            'ctr' => 'float',
+            'avgCPC' => 'float',
+            'cost' => 'float',
+            'matchType' => 'string',
+            'avgPosition' => 'float',
+            'convRate1PerClick' => 'float',
+            'conv1PerClick' => 'int',
+            'costConv1PerClick' => 'float',
+            'viewThroughConv' => 'int',
+            'convRateManyPerClick' => 'float',
+            'convManyPerClick' => 'int',
+            'costConvManyPerClick' => 'float'
+        );
     }
 
 } 

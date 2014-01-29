@@ -24,6 +24,10 @@ class DailyCampaignDefinition implements ReportDefinition {
         $this->selector->fields = array_merge($this->selector->fields, array(
             'Date'
         ));
+
+        $this->field_types = array_merge($this->field_types, array(
+            'day' => 'string'
+        ));
     }
 
     /**

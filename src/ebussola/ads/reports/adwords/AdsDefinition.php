@@ -45,6 +45,32 @@ class AdsDefinition extends ReportDefinition implements \ebussola\adwords\report
             'ConversionsManyPerClick',
             'CostPerConversionManyPerClick'
         );
+
+        $this->field_types = array(
+            'campaign' => 'string',
+            'campaignID' => 'string',
+            'adGroup' => 'string',
+            'ad' => 'string',
+            'descriptionLine1' => 'string',
+            'descriptionLine2' => 'string',
+            'destinationURL' => 'string',
+            'impressions' => 'int',
+            'clicks' => 'int',
+            'ctr' => 'float',
+            'avgCPC' => 'float',
+            'cost' => 'float',
+            'avgPosition' => 'float',
+            'displayURL' => 'string',
+            'imageURL' => 'string',
+            'adType' => 'string',
+            'convRate1PerClick' => 'float',
+            'conv1PerClick' => 'int',
+            'costConv1PerClick' => 'float',
+            'viewThroughConv' => 'int',
+            'convRateManyPerClick' => 'float',
+            'convManyPerClick' => 'int',
+            'costConvManyPerClick' => 'float'
+        );
     }
 
 }

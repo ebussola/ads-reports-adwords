@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "cd4b1b2145c3298e7b2120c5c97812cd",
+    "hash": "9f38ac1b8c3a366243397034403ce3be",
     "packages": [
         {
             "name": "ebussola/ads-reports",
@@ -40,16 +40,16 @@
         },
         {
             "name": "ebussola/adwords-reports",
-            "version": "1.0.0",
+            "version": "1.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ebussola/adwords-reports.git",
-                "reference": "40815443aee8fdd4d6b3e25a1a42465264751673"
+                "reference": "ce32ab0876ee1a8385b0603d950f7dee3a34d5c7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ebussola/adwords-reports/zipball/40815443aee8fdd4d6b3e25a1a42465264751673",
-                "reference": "40815443aee8fdd4d6b3e25a1a42465264751673",
+                "url": "https://api.github.com/repos/ebussola/adwords-reports/zipball/ce32ab0876ee1a8385b0603d950f7dee3a34d5c7",
+                "reference": "ce32ab0876ee1a8385b0603d950f7dee3a34d5c7",
                 "shasum": ""
             },
             "require": {
@@ -73,7 +73,7 @@
                 }
             ],
             "description": "Adwords Reports",
-            "time": "2013-11-01 17:19:54"
+            "time": "2014-01-29 16:48:51"
         },
         {
             "name": "google/adwords",
@@ -188,17 +188,17 @@
         },
         {
             "name": "symfony/event-dispatcher",
-            "version": "v2.4.0",
+            "version": "v2.4.1",
             "target-dir": "Symfony/Component/EventDispatcher",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/EventDispatcher.git",
-                "reference": "acd1707236f6eb96fbb8d58f63d289b72ebc2f6e"
+                "reference": "e3ba42f6a70554ed05749e61b829550f6ac33601"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/EventDispatcher/zipball/acd1707236f6eb96fbb8d58f63d289b72ebc2f6e",
-                "reference": "acd1707236f6eb96fbb8d58f63d289b72ebc2f6e",
+                "url": "https://api.github.com/repos/symfony/EventDispatcher/zipball/e3ba42f6a70554ed05749e61b829550f6ac33601",
+                "reference": "e3ba42f6a70554ed05749e61b829550f6ac33601",
                 "shasum": ""
             },
             "require": {
@@ -238,7 +238,7 @@
             ],
             "description": "Symfony EventDispatcher Component",
             "homepage": "http://symfony.com",
-            "time": "2013-12-03 14:52:22"
+            "time": "2013-12-28 08:12:03"
         }
     ],
     "packages-dev": [
@@ -611,17 +611,17 @@
         },
         {
             "name": "symfony/yaml",
-            "version": "v2.4.0",
+            "version": "v2.4.1",
             "target-dir": "Symfony/Component/Yaml",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Yaml.git",
-                "reference": "1ae235a1b9d3ad3d9f3860ff20acc072df95b7f5"
+                "reference": "4e1a237fc48145fae114b96458d799746ad89aa0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Yaml/zipball/1ae235a1b9d3ad3d9f3860ff20acc072df95b7f5",
-                "reference": "1ae235a1b9d3ad3d9f3860ff20acc072df95b7f5",
+                "url": "https://api.github.com/repos/symfony/Yaml/zipball/4e1a237fc48145fae114b96458d799746ad89aa0",
+                "reference": "4e1a237fc48145fae114b96458d799746ad89aa0",
                 "shasum": ""
             },
             "require": {
@@ -654,7 +654,7 @@
             ],
             "description": "Symfony Yaml Component",
             "homepage": "http://symfony.com",
-            "time": "2013-11-26 16:40:27"
+            "time": "2013-12-28 08:12:03"
         }
     ],
     "aliases": [
