@@ -19,6 +19,8 @@ class AdStats extends AbstractStats implements \ebussola\ads\reports\adwords\AdS
     public $description2;
     public $display_url;
     public $headline;
+    public $image_url;
+    public $ad_type;
 
     public function __construct($stats) {
         parent::__construct($stats);
@@ -34,6 +36,8 @@ class AdStats extends AbstractStats implements \ebussola\ads\reports\adwords\AdS
         $this->description2 = & $stats->descriptionLine2;
         $this->display_url = & $stats->displayURL;
         $this->headline = & $stats->ad;
+        $this->image_url = & $stats->imageURL;
+        $this->ad_type = & $stats->adType;
     }
 
 }

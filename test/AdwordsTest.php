@@ -88,6 +88,9 @@ class AdwordsTest extends PHPUnit_Framework_TestCase {
         /** @var \ebussola\ads\reports\adwords\AdStats $stats */
         foreach ($ad_report as $stats) {
             $this->assertInstanceOf('\ebussola\ads\reports\Stats', $stats);
+            $this->assertNotNull($stats->ad_group_name);
+            $this->assertNotNull($stats->image_url);
+            $this->assertNotNull($stats->ad_type);
             $this->assertNotNull($stats->description1);
             $this->assertNotNull($stats->description2);
             $this->assertNotNull($stats->destination_url);

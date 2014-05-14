@@ -23,6 +23,9 @@ use ebussola\ads\reports\Stats;
  * @property string $description1
  * @property string $description2
  * @property string $display_url
+ * @property string $image_url
+ * @property string $ad_type
+ * https://developers.google.com/adwords/api/docs/appendix/reports#ad look for AdType field for possible values
  *
  * @property float $average_position
  *

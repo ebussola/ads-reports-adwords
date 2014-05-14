@@ -10,7 +10,7 @@
     ],
     "require": {
         "ebussola/ads-reports": "~1.2",
-        "ebussola/adwords-reports": "~1.1"
+        "ebussola/adwords-reports": "~1.2"
     },
     "require-dev": {
         "phpunit/phpunit": "3.7.28"
@@ -25,11 +25,11 @@
             "type": "package",
             "package": {
                 "name": "google/adwords",
-                "version": "4.6.1",
+                "version": "5.2.3",
                 "source": {
-                    "url": "https://code.google.com/p/google-api-adwords-php/",
+                    "url": "https://github.com/googleads/googleads-php-lib.git",
                     "type": "git",
-                    "reference": "6e602ed6a048d15779e64384232ac8004898555b"
+                    "reference": "5.2.3"
                 },
                 "autoload": {
                     "classmap": [
