@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "4239c77fff00336a62e5d5265f7c7223",
+    "hash": "213d6cb8c67fbc9e683c78b316d1d107",
     "packages": [
         {
             "name": "ebussola/ads-reports",
@@ -41,16 +41,16 @@
         },
         {
             "name": "ebussola/adwords-reports",
-            "version": "1.2.3",
+            "version": "1.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ebussola/adwords-reports.git",
-                "reference": "afd193783dfef2ef0d0725ef77ea3b233ea3a1d3"
+                "reference": "8b9b8e2be2b8b21c287566b586ab2c20e08a21c1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ebussola/adwords-reports/zipball/afd193783dfef2ef0d0725ef77ea3b233ea3a1d3",
-                "reference": "afd193783dfef2ef0d0725ef77ea3b233ea3a1d3",
+                "url": "https://api.github.com/repos/ebussola/adwords-reports/zipball/8b9b8e2be2b8b21c287566b586ab2c20e08a21c1",
+                "reference": "8b9b8e2be2b8b21c287566b586ab2c20e08a21c1",
                 "shasum": ""
             },
             "require": {
@@ -74,7 +74,7 @@
                 }
             ],
             "description": "Adwords Reports",
-            "time": "2014-07-21 13:48:55"
+            "time": "2014-07-21 19:45:21"
         },
         {
             "name": "google/adwords",

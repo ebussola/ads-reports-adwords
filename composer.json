@@ -10,7 +10,7 @@
     ],
     "require": {
         "ebussola/ads-reports": "~1.2",
-        "ebussola/adwords-reports": "~1.2"
+        "ebussola/adwords-reports": "~1.3"
     },
     "require-dev": {
         "phpunit/phpunit": "3.7.28"
