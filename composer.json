@@ -25,17 +25,17 @@
             "type": "package",
             "package": {
                 "name": "google/adwords",
-                "version": "5.2.3",
+                "version": "5.3.1",
                 "source": {
                     "url": "https://github.com/googleads/googleads-php-lib.git",
                     "type": "git",
-                    "reference": "5.2.3"
+                    "reference": "5.3.1"
                 },
                 "autoload": {
                     "classmap": [
                         "src/Google/Api/Ads/AdWords/Lib",
                         "src/Google/Api/Ads/AdWords/Util",
-                        "src/Google/Api/Ads/AdWords/v201309",
+                        "src/Google/Api/Ads/AdWords/v201406",
                         "src/Google/Api/Ads/Common/Lib",
                         "src/Google/Api/Ads/Common/Util"
                     ]

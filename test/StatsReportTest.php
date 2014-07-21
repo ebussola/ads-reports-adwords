@@ -13,9 +13,9 @@ class StatsReportTest extends PHPUnit_Framework_TestCase {
         for ($i=0 ; $i<=100 ; $i++) {
             $stats = new \stdClass();
 
-            $stats->convRate1PerClick = rand(1, 10);
-            $stats->conv1PerClick = rand(1, 50);
-            $stats->costConv1PerClick = rand(1, 50);
+            $stats->clickConversionRate = rand(1, 10);
+            $stats->convertedClicks = rand(1, 50);
+            $stats->costConvertedClick = rand(1, 50);
             $stats->viewThroughConv = rand(1, 50);
 
             $stats = new \ebussola\ads\reports\adwords\stats\AbstractStats($stats);
@@ -33,9 +33,9 @@ class StatsReportTest extends PHPUnit_Framework_TestCase {
         for ($i=0 ; $i<=100 ; $i++) {
             $stats = new \stdClass();
 
-            $stats->convRateManyPerClick = rand(1, 10);
-            $stats->convManyPerClick = rand(1, 50);
-            $stats->costConvManyPerClick = rand(1, 50);
+            $stats->convRate = rand(1, 10);
+            $stats->conversions = rand(1, 50);
+            $stats->costConv = rand(1, 50);
 
             $stats = new \ebussola\ads\reports\adwords\stats\AbstractStats($stats);
             $stats_report->addStats($stats);
@@ -66,9 +66,9 @@ class StatsReportTest extends PHPUnit_Framework_TestCase {
         for ($i=0 ; $i<=100 ; $i++) {
             $stats = new \stdClass();
 
-            $stats->convRate1PerClick = rand(1, 10);
-            $stats->conv1PerClick = rand(1, 50);
-            $stats->costConv1PerClick = rand(1, 50);
+            $stats->clickConversionRate = rand(1, 10);
+            $stats->convertedClicks = rand(1, 50);
+            $stats->costConvertedClick = rand(1, 50);
             $stats->viewThroughConv = rand(1, 50);
 
             $stats = new \ebussola\ads\reports\adwords\stats\AbstractStats($stats);
@@ -85,9 +85,9 @@ class StatsReportTest extends PHPUnit_Framework_TestCase {
         for ($i=0 ; $i<=100 ; $i++) {
             $stats = new \stdClass();
 
-            $stats->convRateManyPerClick = rand(1, 10);
-            $stats->convManyPerClick = rand(1, 50);
-            $stats->costConvManyPerClick = rand(1, 50);
+            $stats->convRate = rand(1, 10);
+            $stats->conversions = rand(1, 50);
+            $stats->costConv = rand(1, 50);
 
             $stats = new \ebussola\ads\reports\adwords\stats\AbstractStats($stats);
             $stats_report->addStats($stats);

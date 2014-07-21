@@ -58,13 +58,13 @@ class KeywordDefinition extends ReportDefinition implements \ebussola\adwords\re
             'cost' => 'float',
             'matchType' => 'string',
             'avgPosition' => 'float',
-            'convRate1PerClick' => 'float',
-            'conv1PerClick' => 'int',
-            'costConv1PerClick' => 'float',
+            'clickConversionRate' => 'float',
+            'convertedClicks' => 'int',
+            'costConvertedClick' => 'float',
             'viewThroughConv' => 'int',
-            'convRateManyPerClick' => 'float',
-            'convManyPerClick' => 'int',
-            'costConvManyPerClick' => 'float'
+            'convRate' => 'float',
+            'conversions' => 'int',
+            'costConv' => 'float'
         );
     }
 

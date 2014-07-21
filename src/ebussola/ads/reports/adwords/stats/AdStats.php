@@ -36,7 +36,7 @@ class AdStats extends AbstractStats implements \ebussola\ads\reports\adwords\AdS
         $this->description2 = & $stats->descriptionLine2;
         $this->display_url = & $stats->displayURL;
         $this->headline = & $stats->ad;
-        $this->image_url = & $stats->imageURL;
+        $this->image_url = & $stats->imageAdURL;
         $this->ad_type = & $stats->adType;
     }
 

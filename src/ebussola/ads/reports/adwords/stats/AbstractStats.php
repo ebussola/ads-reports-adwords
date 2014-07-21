@@ -69,14 +69,14 @@ class AbstractStats extends Stats {
         $this->cost = & $stats->cost;
         $this->average_position = & $stats->avgPosition;
 
-        $this->conversion_rate = & $stats->convRate1PerClick;
-        $this->conversions = & $stats->conv1PerClick;
-        $this->cost_per_conversion = & $stats->costConv1PerClick;
+        $this->conversion_rate = & $stats->clickConversionRate;
+        $this->conversions = & $stats->convertedClicks;
+        $this->cost_per_conversion = & $stats->costConvertedClick;
         $this->view_through_conversion = & $stats->viewThroughConv;
 
-        $this->conversion_rate_many_per_click = & $stats->convRateManyPerClick;
-        $this->conversions_many_per_click = & $stats->convManyPerClick;
-        $this->cost_per_conversion_many_per_click = & $stats->costConvManyPerClick;
+        $this->conversion_rate_many_per_click = & $stats->convRate;
+        $this->conversions_many_per_click = & $stats->conversions;
+        $this->cost_per_conversion_many_per_click = & $stats->costConv;
     }
 
     /**
