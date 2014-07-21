@@ -47,16 +47,16 @@ class AdGroupsDefinition extends ReportDefinition implements \ebussola\adwords\r
             'impressions' => 'int',
             'clicks' => 'int',
             'ctr' => 'float',
-            'avgCPC' => 'float',
-            'cost' => 'float',
+            'avgCPC' => 'micro',
+            'cost' => 'micro',
             'avgPosition' => 'float',
             'clickConversionRate' => 'float',
             'convertedClicks' => 'int',
-            'costConvertedClick' => 'float',
+            'costConvertedClick' => 'micro',
             'viewThroughConv' => 'int',
             'convRate' => 'float',
             'conversions' => 'int',
-            'costConv' => 'float'
+            'costConv' => 'micro'
         );
     }
 

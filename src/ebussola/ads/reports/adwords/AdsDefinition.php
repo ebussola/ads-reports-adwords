@@ -57,19 +57,19 @@ class AdsDefinition extends ReportDefinition implements \ebussola\adwords\report
             'impressions' => 'int',
             'clicks' => 'int',
             'ctr' => 'float',
-            'avgCPC' => 'float',
-            'cost' => 'float',
+            'avgCPC' => 'micro',
+            'cost' => 'micro',
             'avgPosition' => 'float',
             'displayURL' => 'string',
             'imageAdURL' => 'string',
             'adType' => 'string',
             'clickConversionRate' => 'float',
             'convertedClicks' => 'int',
-            'costConvertedClick' => 'float',
+            'costConvertedClick' => 'micro',
             'viewThroughConv' => 'int',
             'convRate' => 'float',
             'conversions' => 'int',
-            'costConv' => 'float'
+            'costConv' => 'micro'
         );
     }
 
